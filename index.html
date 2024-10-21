@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptocurrency Viewer</title>
-    <script src= "scripts/fetch-data.js"></script>
+    <script src="scripts/fetch-data.js" defer></script> <!-- Ensure the script loads after the page -->
 </head>
 <body>
     
     <span id="output"></span>
     <br>
-    <button id ="btn-fetch">get data</button>
+
+    <!--Drop down menu for cryptocurrencies-->
+    <br>
+    <h2>cryptocurrencies</h2>
+    <select name="cryptoList" id="cryptoSelect">
+        <option value=""></option> <!-- Default option -->
+    </select>
+
+
+    <div id="cryptoDetails">
+        <h3>Selected Cryptocurrency Details</h3>
+        <p id="cryptoName"></p>        
+        <p id="cryptoSymbol"></p>       
+        <p id="cryptoSupply"></p>       
+        <p id="cryptoPrice"></p>        
+        <p id="cryptoPercentChange"></p>
+    </div>
+    
+
 </body>
 </html>
