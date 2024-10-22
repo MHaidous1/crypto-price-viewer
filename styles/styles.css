@@ -11,7 +11,7 @@ body {
     font-family: 'Montserrat', sans-serif; 
 }
 
-h2 {
+h1 {
     font-size: 42px;           
     color: #004EFF;
     text-align: center;
@@ -54,11 +54,15 @@ h2 {
 }
 
 /* Section Heading in Details */
-#cryptoDetails h3 {
+#cryptoDetails h2 {
     font-size: 24px;
     font-style: italic;
     color: #004EFF;
     margin-bottom: 20px;        
+}
+
+#cryptoDetails p{
+    font-weight: bold;
 }
 
 #cryptoIcon {

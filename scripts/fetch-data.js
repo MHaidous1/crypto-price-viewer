@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         cryptoData.forEach(crypto => {
             const opt = document.createElement('option');
-            opt.text = crypto.name;  // Set the name of the cryptocurrency
-            opt.value = crypto.id;   // Set the ID 
+            opt.text = crypto.name;         // Set the name of the cryptocurrency
+            opt.value = crypto.id;          // Set the ID 
             cryptoSelect.options.add(opt);  // Add option to the select element
         });
 
@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Update the text content of the HTML elements with the cryptocurrency data
-        nameElem.innerText = `Name: ${crypto.name}`;
+        nameElem.innerText = `${crypto.name}`;
         symbolElem.innerText = `Symbol: ${crypto.symbol}`;
-        supplyElem.innerText = `Supply: ${Math.trunc(crypto.supply)}`;
+        supplyElem.innerText = `Supply: ${Math.round(crypto.supply)}`;
         priceElem.innerText = `Price (USD): $${parseFloat(crypto.priceUsd).toFixed(2)}`;
 
         const percentChange = parseFloat(crypto.changePercent24Hr).toFixed(2);
