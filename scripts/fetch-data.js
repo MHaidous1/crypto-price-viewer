@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get the select element
     const cryptoSelect = document.getElementById('cryptoSelect');
     const cryptoDetailsDiv = document.getElementById('cryptoDetails');
+    const iconElem = document.getElementById('cryptoIcon');
+
     const url = 'https://api.coincap.io/v2/assets';
+
+    
 
     // Ensuring the select element exists before proceeding
     if (!cryptoSelect) {
@@ -30,7 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(`Inside ${loadCryptoData.name}`);
 
-        cryptoSelect.innerHTML = ''; // Clear any existing options
+        // Remove only the dynamically loaded options, keeping the "Select" option intact
+        while (cryptoSelect.options.length > 1) {
+            cryptoSelect.remove(1);  // Keep the first option (index 0, which is "Select")
+        }
+
 
         cryptoData.forEach(crypto => {
             const opt = document.createElement('option');
@@ -75,37 +83,51 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     // Function to display the cryptocurrency details
+        // Function to display the cryptocurrency details, including the icon
     function displayCryptoDetails(crypto) {
         if (!crypto) {
             console.error('No cryptocurrency data to display');
             return;
         }
-    
-        // Log the crypto data to ensure it has the correct structure
+
         console.log('Displaying cryptocurrency details:', crypto);
-    
+
         const nameElem = document.getElementById('cryptoName');
         const symbolElem = document.getElementById('cryptoSymbol');
         const supplyElem = document.getElementById('cryptoSupply');
         const priceElem = document.getElementById('cryptoPrice');
         const percentChangeElem = document.getElementById('cryptoPercentChange');
-    
+        const iconElem = document.getElementById('cryptoIcon');
+
         // Check if the required elements exist
         if (!nameElem || !symbolElem || !supplyElem || !priceElem || !percentChangeElem) {
             console.error('Some display elements are missing from the HTML');
             return;
         }
-    
+
         // Update the text content of the HTML elements with the cryptocurrency data
         nameElem.innerText = `Name: ${crypto.name}`;
         symbolElem.innerText = `Symbol: ${crypto.symbol}`;
-        supplyElem.innerText = `Supply: ${crypto.supply}`;
+        supplyElem.innerText = `Supply: ${Math.trunc(crypto.supply)}`;
         priceElem.innerText = `Price (USD): $${parseFloat(crypto.priceUsd).toFixed(2)}`;
-    
-        // Update the percentage change (with two decimal places)
+
         const percentChange = parseFloat(crypto.changePercent24Hr).toFixed(2);
         percentChangeElem.innerText = `24h Change: ${percentChange}%`;
+
+        // Dynamically set the cryptocurrency icon using the symbol (if available)
+        const cryptoSymbol = crypto.symbol.toLowerCase();
+        iconElem.src = `./node_modules/cryptocurrency-icons/svg/color/${cryptoSymbol}.svg`; // Use the SVG icon
+        iconElem.alt = `${crypto.name} icon`;  // Set alt text for accessibility
+
+        // Handle missing icons - hide image if it doesn't load
+        iconElem.onerror = function() {
+            this.style.display = 'none';  // Hide the icon if not found
+        };
+
+        // Show the icon if it's available
+        iconElem.style.display = 'block';
     }
+
     
     
 

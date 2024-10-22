@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptocurrency Viewer</title>
     <script src="scripts/fetch-data.js" defer></script> <!-- Ensure the script loads after the page -->
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     
     <span id="output"></span>
-    <br>
-
+  
     <!--Drop down menu for cryptocurrencies-->
-    <br>
-    <h2>cryptocurrencies</h2>
-    <select name="cryptoList" id="cryptoSelect">
-        <option value=""></option> <!-- Default option -->
+    <h2>Crypto-Viewer</h2>
+    <select name="cryptoList" id="cryptoSelect" text="Select">
+        <option value="" selected disabled>Select</option> <!-- Default option -->
     </select>
 
 
     <div id="cryptoDetails">
-        <h3>Selected Cryptocurrency Details</h3>
+        <h3>Crypto-Details</h3>
+        <img id="cryptoIcon" src="" alt="Crypto Icon" style="display: none;" width="100"> 
         <p id="cryptoName"></p>        
         <p id="cryptoSymbol"></p>       
         <p id="cryptoSupply"></p>       

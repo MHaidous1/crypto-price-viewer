@@ -24,7 +24,7 @@ A simple web application that displays live cryptocurrency prices fetched from t
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/crypto-price-viewer.git
+   git clone https://github.com/mhaidous1/crypto-price-viewer.git
 
 2. **Navigate into the project directory**:
     

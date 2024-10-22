@@ -1,0 +1,70 @@
+body {
+    display: grid;
+    justify-content: center;   
+    align-items: center;       
+    height: auto;             
+    margin: 0;
+    padding: 20px;            
+    background-image: url('../styles/imgs/cryptoBackground.jpg'); 
+    background-size: cover;   
+    background-repeat: no-repeat; 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+h2 {
+    font-size: 42px;           
+    color: #004EFF;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 30px;      
+}
+
+/* Dropdown Styling */
+#cryptoSelect {
+    width: 250px;              
+    padding: 12px;             
+    font-size: 16px;           
+    color: #ffffff;            
+    background-color: #004EFF; 
+    border: 2px solid #00CDFF; 
+    border-radius: 10px;      
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease; 
+}
+
+#cryptoSelect:hover {
+    background-color: #003BB5; 
+}
+
+#cryptoDetails {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 15px;         
+    padding: 20px;
+    margin-top: 30px;            
+    width: 100%;                 
+    max-width: 600px;            
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+#cryptoDetails p {
+    font-size: 18px;           
+    margin: 10px 0;           
+    color: #333;               
+}
+
+/* Section Heading in Details */
+#cryptoDetails h3 {
+    font-size: 24px;
+    font-style: italic;
+    color: #004EFF;
+    margin-bottom: 20px;        
+}
+
+#cryptoIcon {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100px;
+    height: auto;
+}
